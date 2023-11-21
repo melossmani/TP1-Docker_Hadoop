@@ -119,4 +119,30 @@ hadoop fs -tail input/purchases.txt
 ```
 Le résultat suivant va donc s’afficher :
 
-<img src="hadoop-img2.png"/>
+<img src="hdfs-commandes.png"/>
+
+### Interfaces web pour Hadoop
+Hadoop offre plusieurs interfaces web pour pouvoir observer le comportement de ses différentes
+composantes. Vous pouvez afficher ces pages en local sur votre machine grâce à l'option -p de la
+commande docker run. En effet, cette option permet de publier un port du contenaire sur la machine
+hôte. Pour pouvoir publier tous les ports exposés, vous pouvez lancer votre contenaire en utilisant
+l'option -P.
+
+En regardant le contenu du fichier start-container.sh fourni dans le projet, vous verrez que deux ports de
+la machine maître ont été exposés :
+
+Le port 50070 : qui permet d'afficher les informations de votre namenode.
+
+Le port 8088 : qui permet d'afficher les informations du resource manager de Yarn et visualiser le
+comportement des différents jobs.
+
+
+Une fois votre cluster lancé et prêt à l'emploi, vous pouvez, sur votre navigateur préféré de votre machine
+hôte, aller à : [http://localhost:50070](http://localhost:50070) . Vous obtiendrez le résultat suivant :
+
+<img src="hadoop-img4.png"/>
+
+Vous pouvez également visualiser l'avancement et les résultats de vos Jobs (Map Reduce ou autre) en
+allant à l’adresse : [http://localhost:8088](http://localhost:8088)
+
+<img src="hadoop-img3.png"/>
