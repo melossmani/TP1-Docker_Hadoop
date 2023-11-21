@@ -5,6 +5,6 @@ Ce TP fait suite au cours sur le _framework_ libre et open source appelé [__Had
 
 ---
 
-Pour réaliser ce TP Suivez  les consignes dans le fichier du TP : 
-> [.md](./Wordcount_Local.md)
+Pour installer le **Docker** et **Hadoop**, suivez  les consignes dans le fichier du TP : 
+> [Install_Docker_Hadoop.md](./Install_Docker_Hadoop.md)
 
