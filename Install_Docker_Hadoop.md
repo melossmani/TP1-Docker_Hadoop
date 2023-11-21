@@ -17,14 +17,12 @@ Pour installer *Docker*, merci de suivre les [consignes disponibles ici](https:/
 # Installation de **Hadoop** via _Docker_
 
 ---
-Nous allons utiliser tout au long de ce TP trois contenaires représentant respectivement un nœud maître (Namenode) et deux nœuds esclaves (Datanodes).
+Nous allons utiliser tout au long de ce TP trois contenaires représentant respectivement un nœud maître (_Namenode_) et deux nœuds esclaves (_Datanodes_).
 1. Depuis un _Terminal_, téléchargez l'image docker depuis [_dockerhub_](https://hub.docker.com) en utilisant la commande suivante :
 
 ```bash
 docker pull melossmani/hadoop-spark:um6p
 ```
-
-
 Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécessaires pour utiliser **Hadoop** et **Spark**. Il contient également _Python3.x_ (version du langage _Python_ compatible avec les versions de **Hadoop** et **Spark** installées).
 
 2. Créez les 3 contenaires à partir de l'image téléchargée. Pour cela :
@@ -75,7 +73,7 @@ fourni pour cela, appelé start-hadoop.sh. Lancer ce script.
 ```
 Le résultat devra ressembler à ce qui suit :
 
-
+<img src="hadoop-img1.png"/>
 
 **Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermé et relancé son ordinateur p. ex.), il suffira 
 
@@ -88,3 +86,35 @@ Vous pouvez alors entrer dans le _Namenode_ :
 ```bash
 docker exec -it hadoop-master bash
 ```
+### Premiers pas avec Hadoop
+Toutes les commandes interagissant avec le système **Hadoop** commencent par `hadoop fs`.
+Ensuite, les options rajoutées sont très largement inspirées des commandes Unix standard.
+
+- Créer un répertoire dans HDFS, appelé input. Pour cela, taper :
+```bash
+ hadoop fs –mkdir -p input
+```
+Si pour une raison ou une autre, vous n'arrivez pas à créer le répertoire input, avec un message
+ressemblant à ceci: ls: `.': No such file or directory, veiller à construire l'arborescence de l'utilisateur
+principal (root), comme suit :
+
+```bash
+hadoop fs -mkdir -p /user/root
+```
+Nous allons utiliser le fichier purchases.txt comme entrée pour le traitement MapReduce. Ce fichier se
+trouve déjà sous le répertoire principal de votre machine master.
+
+- Charger le fichier purchases dans le répertoire input que vous avez créé :
+```bash
+hadoop fs –put purchases.txt input
+```
+
+- Pour afficher le contenu du répertoire input, la commande est :
+```bash
+hadoop fs –ls input
+```
+Pour afficher les dernières lignes du fichier purchases :
+```bash
+hadoop fs -tail input/purchases.txt
+```
+Le résultat suivant va donc s’afficher :
