@@ -118,3 +118,5 @@ Pour afficher les dernières lignes du fichier purchases :
 hadoop fs -tail input/purchases.txt
 ```
 Le résultat suivant va donc s’afficher :
+
+<img src="hadoop-img2.png"/>
