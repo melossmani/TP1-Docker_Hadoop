@@ -96,18 +96,8 @@ Le résultat devra ressembler à ce qui suit :
 
 <img src="hadoop-img1.png"/>
 
-**Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermé et relancé son ordinateur p. ex.), il suffira 
 
-1. de lancer l'application `Docker Desktop`, qui lance les _daemon Docker_.   
-1. de lancer la commande suivante :
-```bash
-docker start hadoop-master hadoop-slave1 hadoop-slave2
-```
-Vous pouvez alors entrer dans le _Namenode_ :
-```bash
-docker exec -it hadoop-master bash
-```
-### Premiers pas avec Hadoop
+## Premiers pas avec Hadoop
 Toutes les commandes interagissant avec le système **Hadoop** commencent par `hadoop fs`.
 Ensuite, les options rajoutées sont très largement inspirées des commandes Unix standard.
 
