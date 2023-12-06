@@ -14,7 +14,9 @@ Nous allons utiliser tout au long de ce TP trois contenaires représentant respe
 
 ```bash
 docker pull melossmani/hadoop-spark:um6p
+
 ```
+
 Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécessaires pour utiliser **Hadoop** et **Spark**. Il contient également _Python3.x_ (version du langage _Python_ compatible avec les versions de **Hadoop** et **Spark** installées).
 
 2. Créez les 3 contenaires à partir de l'image téléchargée. Pour cela :
@@ -36,13 +38,17 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
      docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2  melossmani/hadoop-spark:um6p
    `
 ---
+
 ### Préparation au TP
 
 - Entrez dans le contenaire `hadoop-master` pour commencer à l'utiliser
+
 ```bash
 docker exec -it hadoop-master bash
 ```
+
 Le résultat de cette exécution sera le suivant:
+
 ```bash
 root@hadoop-master:~#
 ```
