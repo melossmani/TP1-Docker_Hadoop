@@ -17,8 +17,7 @@ docker pull melossmani/hadoop-spark:um6p
 
 ```
 
-Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécessaires pour utiliser **Hadoop** et **Spark**. Il contient également _Python3.x_ (version du langage _Python_ compatible avec les versions de **Hadoop** et **Spark** installées).
-
+Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécessaires pour utiliser **Hadoop** et **Spark**. Ce container ne contient pas Python, mais nous verrons comment l'installer a posteriori.
 2. Créez les 3 contenaires à partir de l'image téléchargée. Pour cela :
   
    a. Créez un réseau qui permettra de relier les trois contenaires :
