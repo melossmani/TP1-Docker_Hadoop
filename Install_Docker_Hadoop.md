@@ -40,7 +40,7 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
 
 ## Préparation au TP
 
-- Entrez dans le contenaire `hadoop-master` pour commencer à l'utiliser
+1. Entrez dans le contenaire `hadoop-master` pour commencer à l'utiliser
 
 ```bash
 docker exec -it hadoop-master bash
@@ -52,7 +52,42 @@ Le résultat de cette exécution sera le suivant:
 root@hadoop-master:~#
 ```
 Il s'agit du `shell` ou du `bash` (_Linux/Ubuntu_) du nœud maître. Vous vous retrouverez dans le shell du namenode, et vous pourrez ainsi manipuler le cluster à votre
-guise. La première chose à faire, une fois dans le contenaire, est de lancer hadoop et yarn. Un script est
+guise.  Nous allons en profiter pour installer _Python2.7_ (version requise pour la version d'**Hadoop** installée):
+
+ ```shell
+ apt-get update
+ apt-get install python2.7
+ ```
+
+2. Cette installation de _Python_ doit aussi être réalisée sur les _Datanodes_. Quittez le contenaire `hadoop-master`
+ ```shell
+ exit
+ ```
+ Puis, enchaînez les commandes suivantes (une par une) pour le container `hadoop-slave1` :
+ ```shell
+ docker exec -it hadoop-slave1 bash
+ ```
+ Puis
+ ```shell
+ apt-get update
+ apt-get install python2.7
+ exit
+ ```
+ et pour le container `hadoop-slave2`
+ ```shell
+ docker exec -it hadoop-slave2 bash
+ ```
+ Puis
+ ```shell
+ apt-get update
+ apt-get install python2.7
+ exit
+ ```
+
+
+
+
+La première chose à faire, une fois dans le contenaire, est de lancer hadoop et yarn. Un script est
 fourni pour cela, appelé start-hadoop.sh. Lancer ce script.
 ```bash
 ./start-hadoop.sh
