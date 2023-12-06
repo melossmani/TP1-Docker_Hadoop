@@ -35,11 +35,10 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
    ```
 
    ```bash
-     docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2  melossmani/hadoop-spark:um6p
-   `
----
+     docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2  melossmani/hadoop-spark:um6p   `
+   ```
 
-### Préparation au TP
+## Préparation au TP
 
 - Entrez dans le contenaire `hadoop-master` pour commencer à l'utiliser
 
