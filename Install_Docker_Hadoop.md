@@ -82,12 +82,13 @@ guise.  Nous allons en profiter pour installer _Python2.7_ (version requise pour
  apt-get install python2.7
  exit
  ```
-
-
-
-
+3. Enfin, entrez à nouveau dans le container `hadoop-master` dans lequel nous allons lancer les _jobs_ :
+ ```shell
+ docker exec -it hadoop-master bash
+ ```  
 La première chose à faire, une fois dans le contenaire, est de lancer hadoop et yarn. Un script est
 fourni pour cela, appelé start-hadoop.sh. Lancer ce script.
+
 ```bash
 ./start-hadoop.sh
 ```
@@ -166,3 +167,17 @@ Vous pouvez également visualiser l'avancement et les résultats de vos Jobs (Ma
 allant à l’adresse : [http://localhost:8088](http://localhost:8088)
 
 <img src="hadoop-img3.png"/>
+
+**Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermer et relancer son ordinateur p. ex.), il suffira 
+
+  1. de lancer l'application ```Docker Desktop```, qui lance les _daemon Docker_.   
+  1. de lancer la commande suivante :
+   ```shell
+   docker start hadoop-master hadoop-slave1 hadoop-slave2
+   ```
+
+Vous pouvez alors entrer dans le _Namenode_ :
+```shell
+docker exec -it hadoop-master bash
+```
+
