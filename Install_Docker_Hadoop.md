@@ -1,14 +1,6 @@
 **Sommaire**
 
 [TOC]
-# Objectifs du TP
-Initiation au framework hadoop et utilisation de docker pour lancer un cluster hadoop de 3 noeuds.
-# Outils et Versions
-- Apache Hadoop Version : 2.7.2.
-- Docker Version 17.09.1
-- IntelliJ IDEA Version Ultimate 2016.1 (ou tout autre IDE de votre choix)
-- Java Version 1.8.
-- Unix-like ou Unix-based Systems (Divers Linux et MacOS)
 
 # Installation de *Docker*
 
