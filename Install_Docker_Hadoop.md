@@ -34,14 +34,7 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
 
    ```bash
      docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2  melossmani/hadoop-spark:um6p
-   ```     
-
-
-**Remarques** 
-
-- Dans la commande précédente le caractère `\`, utilisé pour poursuivre une commande sur plusieurs lignes, peut parfois poser des pbs. Pour résoudre ce problème, vous pouvez copier cette ligne dans un éditeur de texte, et supprimer ce caractère ainsi que les sauts de ligne.
- 
-- Le port `9999` sera utilisé dans le TP2, au sujet de _Spark streaming
+   `
 ---
 ### Préparation au TP
 
