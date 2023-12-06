@@ -25,19 +25,15 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
 ```     
    b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un _mapping_ entre les ports de la machine hôte et ceux du contenaire). 
    ```bash
-     docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 \
-     -p 16010:16010 --name hadoop-master --hostname hadoop-master \
-      melossmani/hadoop-spark:um6p
+     docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master melossmani/hadoop-spark:um6p
    ```
 
    ```bash
-     docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 \
-     melossmani/hadoop-spark:um6p
+     docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 melossmani/hadoop-spark:um6p
    ```
 
    ```bash
-     docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 \
-     melossmani/hadoop-spark:um6p
+     docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2  melossmani/hadoop-spark:um6p
    ```     
 
 
